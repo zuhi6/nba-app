@@ -3,6 +3,7 @@ import { Table, Modal } from 'react-bootstrap';
 import Score from './Score';
 import GameDetail from './GameDetail';
 import axios from 'axios';
+import './table.css'
 
 export default class Scores extends Component {
     constructor(props) {
@@ -35,8 +36,8 @@ export default class Scores extends Component {
     }
     render() {
         return (
-            <Fragment>
-                <Table responsive striped bordered hover variant='dark'>
+            <Fragment >
+                <Table responsive striped bordered hover className='size'>
                     <thead>
                         <tr>
                             <th>Date</th>

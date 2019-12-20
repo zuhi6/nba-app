@@ -6,7 +6,14 @@ export default class Navigation extends Component {
         return (
             <div>
                 <Navbar onSelect={this.props.onSelect} bg='light' expand='lg'>
-                    <Navbar.Brand >NBA-stats</Navbar.Brand>
+                    <Navbar.Brand>
+                        <img
+                            src={require('../images/nba-logo.png')}
+                            width='100'
+                            height='100' 
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                    /></Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='mr-auto'>

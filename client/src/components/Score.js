@@ -10,11 +10,11 @@ export default class Score extends Component {
             <tr>
                 <td>{moment(this.props.score.startTimeUTC).format("dddd, MMM DD, HH:mm")}</td>
                 <td>
-                    <TeamLogoAndName logo={this.props.score.hTeam.logo} name={this.props.score.hTeam.fullName}></TeamLogoAndName>
+                    <TeamLogoAndName reversed='true' shortName={this.props.score.hTeam.shortName} name={this.props.score.hTeam.nickName}></TeamLogoAndName>
                 </td>
                 <td><h5>{this.props.score.hTeam.score.points} : {this.props.score.vTeam.score.points}</h5></td>
                 <td>
-                    <TeamLogoAndName logo={this.props.score.vTeam.logo} name={this.props.score.vTeam.fullName}></TeamLogoAndName>
+                    <TeamLogoAndName reversed='false' shortName={this.props.score.vTeam.shortName} name={this.props.score.vTeam.nickName}></TeamLogoAndName>
                 </td>
                 <td>{this.props.score.arena}</td>
                 <td><Button variant="info" onClick={() => this.props.showDetail(this.props.score.gameId)}>Info</Button></td>
