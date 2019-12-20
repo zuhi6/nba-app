@@ -45,7 +45,7 @@ export default class GameDetail extends Component {
                             </Row>
 
                             <Row className="show-grid">
-                               
+
                             </Row>
                         </Container>
                     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav,Navbar,NavDropdown} from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
 export default class Navigation extends Component {
     render() {
@@ -10,10 +10,11 @@ export default class Navigation extends Component {
                         <img
                             src={require('../images/nba-logo.png')}
                             width='100'
-                            height='100' 
+                            height='100'
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
-                    /></Navbar.Brand>
+                        />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='mr-auto'>

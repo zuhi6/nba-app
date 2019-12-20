@@ -11,19 +11,22 @@ export default class Scores extends Component {
 
         this.state = {
             scores: null,
-            selectedDate: null,
+            selectedDate: Date.now(),
             show: false,
             gameId: null
         }
     }
 
     getScore = () => {
-        let date = this.state.selectedDate ? this.state.selectedDate : Date.now();
-        date = new Date(date).toISOString().slice(0, 10);
+        
+        let date = new Date(this.state.selectedDate).toISOString().slice(0, 10);
         axios.get(`http://localhost:5000/scores?date=${date}`).then(res => {
             this.setState({ scores: res.data })
         })
 
+    }
+    updateDate = (date) => {  
+        this.setState({ selectedDate: date },() => this.getScore());
     }
     handleShow = (gameId) => {
         this.setState({ show: true, gameId: gameId });
