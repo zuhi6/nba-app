@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
-import TeamLogoAndName from './TeamLogoAndName';
+import { Modal, Button} from 'react-bootstrap';
+import GameHeader from './GameHeader';
+
 import axios from 'axios';
 
 export default class GameDetail extends Component {
@@ -21,6 +22,7 @@ export default class GameDetail extends Component {
         this.getGameDetail();
     }
 
+   
     render() {
         return (
 
@@ -29,26 +31,8 @@ export default class GameDetail extends Component {
                 <Modal.Header closeButton>
                     <Modal.Title>Game Detail</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    {this.state.gameInfo &&
-                        <Container>
-                            <Row className="show-grid align-items-center">
-                                <Col md={4}>
-                                    <TeamLogoAndName logo={this.state.gameInfo.hTeam.logo} name={this.state.gameInfo.hTeam.fullName}></TeamLogoAndName>
-                                </Col>
-                                <Col md={4}>
-                                    <h4>{this.state.gameInfo.hTeam.score.points} : {this.state.gameInfo.vTeam.score.points}</h4>
-                                </Col>
-                                <Col md={4}>
-                                    <TeamLogoAndName logo={this.state.gameInfo.vTeam.logo} name={this.state.gameInfo.vTeam.fullName}></TeamLogoAndName>
-                                </Col>
-                            </Row>
-
-                            <Row className="show-grid">
-
-                            </Row>
-                        </Container>
-                    }
+                <Modal.Body style={{textAlign:'center'}}>
+                    {this.state.gameInfo && <GameHeader gameInfo={this.state.gameInfo}></GameHeader>}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.props.handleClose}>

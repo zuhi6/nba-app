@@ -5,6 +5,12 @@ import TeamLogoAndName from './TeamLogoAndName';
 
 export default class Score extends Component {
 
+    formatResult = (hTeam, vTeam) => {
+      return (hTeam > vTeam ? <h5>{hTeam} : <span style={{color:'grey',fontSize:'95%'}}>{vTeam}</span></h5> : 
+      <h5><span style={{color:'grey',fontSize:'95%'}}>{hTeam}</span> : {vTeam}</h5>)
+      
+    }
+
     render() {
         return (
             <tr>
@@ -12,7 +18,7 @@ export default class Score extends Component {
                 <td>
                     <TeamLogoAndName reversed='true' shortName={this.props.score.hTeam.shortName} name={this.props.score.hTeam.nickName}></TeamLogoAndName>
                 </td>
-                <td><h5>{this.props.score.hTeam.score.points} : {this.props.score.vTeam.score.points}</h5></td>
+                <td>{this.formatResult(this.props.score.hTeam.score.points, this.props.score.vTeam.score.points)}</td>
                 <td>
                     <TeamLogoAndName reversed='false' shortName={this.props.score.vTeam.shortName} name={this.props.score.vTeam.nickName}></TeamLogoAndName>
                 </td>
