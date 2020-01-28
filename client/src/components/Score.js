@@ -9,7 +9,7 @@ export default class Score extends Component {
     if (hTeam === '' || vTeam === '') {
       return <h5>TBD</h5>;
     }
-    return hTeam > vTeam ? (
+    return +hTeam > +vTeam ? (
       <h5>
         {hTeam} :{" "}
         <span style={{ color: "grey", fontSize: "95%" }}>{vTeam}</span>
