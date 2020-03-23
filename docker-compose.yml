@@ -7,6 +7,11 @@ services:
         build: .
         ports:
             - '5000:5000'
+        environment:
+            - PORT=5000
+            - RAPID_API_URL=https://api-nba-v1.p.rapidapi.com
+            - RAPID_API_HOST=api-nba-v1.p.rapidapi.com
+            - RAPID_API_KEY=60b97fe0fbmsh87c097a52a0f295p13ada6jsnd8b8e72422fb
     frontend:
         container_name: nba-app-frontend
         restart: always
