@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Spinner, Media, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 
-axios = axios.create({baseURL: 'http://134.122.95.153:5000'})
+
 
 export default class Scorer extends Component {
   constructor(props) {
@@ -11,11 +11,12 @@ export default class Scorer extends Component {
     this.state = {
       playerPhotoUrl: null
     };
+   
   }
   componentWillMount = () => {
     axios
       .get(
-        `/photo?playerName=${this.props.player.name}&teamName=${this.props.teamName}`
+        `http://134.122.95.153:5000/photo?playerName=${this.props.player.name}&teamName=${this.props.teamName}`
       )
       .then(res => {
         this.setState({ playerPhotoUrl: res.data });

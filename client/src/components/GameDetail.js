@@ -5,7 +5,7 @@ import TopScorers from "./TopScorers";
 import axios from "axios";
 import "./gameDetail.css";
 
-axios = axios.create({baseURL: 'http://134.122.95.153:5000'})
+
 
 export default class GameDetail extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class GameDetail extends Component {
   }
   getGameDetail = () => {
     axios
-      .get(`/gameDetail?gameId=${this.props.gameId}`)
+      .get(`http://134.122.95.153:5000/gameDetail?gameId=${this.props.gameId}`)
       .then(res => {
         this.setState({ gameInfo: res.data },()=> this.getTopScorers()); 
       });
@@ -92,6 +92,7 @@ export default class GameDetail extends Component {
   };
 
   render() {
+    
     return (
       <Fragment>
         <Modal.Header closeButton>

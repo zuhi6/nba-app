@@ -5,7 +5,7 @@ import GameDetail from "./GameDetail";
 import axios from "axios";
 import "./table.css";
 
-axios = axios.create({baseURL: 'http://134.122.95.153:5000'})
+
 
 export default class Scores extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class Scores extends Component {
 
   getScore = () => {
     let date = new Date(this.state.selectedDate).toISOString().slice(0, 10);
-    axios.get(`/scores?date=${date}`).then(res => {
+    axios.get(`http://134.122.95.153:5000/scores?date=${date}`).then(res => {
       this.setState({
         scores: res.data.filter(game => {
           return game.vTeam.shortName && game.hTeam.shortName;
