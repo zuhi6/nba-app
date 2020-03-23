@@ -19,7 +19,7 @@ export default class Scores extends Component {
 
   getScore = () => {
     let date = new Date(this.state.selectedDate).toISOString().slice(0, 10);
-    axios.get(`http://localhost:5000/scores?date=${date}`).then(res => {
+    axios.get(`/scores?date=${date}`).then(res => {
       this.setState({
         scores: res.data.filter(game => {
           return game.vTeam.shortName && game.hTeam.shortName;

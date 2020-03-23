@@ -13,7 +13,7 @@ export default class Scorer extends Component {
   componentWillMount = () => {
     axios
       .get(
-        `http://localhost:5000/photo?playerName=${this.props.player.name}&teamName=${this.props.teamName}`
+        `/photo?playerName=${this.props.player.name}&teamName=${this.props.teamName}`
       )
       .then(res => {
         this.setState({ playerPhotoUrl: res.data });

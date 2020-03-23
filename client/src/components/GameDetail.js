@@ -14,7 +14,7 @@ export default class GameDetail extends Component {
   }
   getGameDetail = () => {
     axios
-      .get(`http://localhost:5000/gameDetail?gameId=${this.props.gameId}`)
+      .get(`/gameDetail?gameId=${this.props.gameId}`)
       .then(res => {
         this.setState({ gameInfo: res.data },()=> this.getTopScorers()); 
       });
@@ -76,7 +76,7 @@ export default class GameDetail extends Component {
     ];
 
     axios
-      .get(`http://localhost:5000/player`, {
+      .get(`/player`, {
         params: { playerIds, gameId: hLeaders.gameId }
       })
       .then(res => {
