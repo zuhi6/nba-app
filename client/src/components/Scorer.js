@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Spinner, Media, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 
+axios = axios.create({baseURL: 'http://134.122.95.153:5000'})
+
 export default class Scorer extends Component {
   constructor(props) {
     super(props);

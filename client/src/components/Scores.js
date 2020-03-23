@@ -5,6 +5,8 @@ import GameDetail from "./GameDetail";
 import axios from "axios";
 import "./table.css";
 
+axios = axios.create({baseURL: 'http://134.122.95.153:5000'})
+
 export default class Scores extends Component {
   constructor(props) {
     super(props);
