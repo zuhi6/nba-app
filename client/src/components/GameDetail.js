@@ -78,7 +78,7 @@ export default class GameDetail extends Component {
     ];
 
     axios
-      .get(`/player`, {
+      .get(`http://134.122.95.153:5000/player`, {
         params: { playerIds, gameId: hLeaders.gameId }
       })
       .then(res => {
